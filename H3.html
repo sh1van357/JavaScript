@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Shuffle</title>
+    <link href="https://fonts.googleapis.com/css?family=Copse" rel="stylesheet">
+    <style>
+        html {
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+        }
+        body {
+            font-family: 'Copse', serif;
+            text-align: center;
+            background-color: palegoldenrod;
+        }
+        img {
+            height: 300px;
+            width: 300px;
+            border: 0px;
+        }
+        #pictures {
+            width: 900px;
+            height: 900px;
+            font-size: 0px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<h1>plaatjes minecraft</h1>
+<br>
+<div id="pictures">
+    <img src="img2/q9.jpg">
+    <img src="img2/q8.jpg">
+    <img src="img2/q7.jpg">
+    <img src="img2/q6.jpg">
+    <img src="img2/q5.jpg">
+    <img src="img2/q1.jpg">
+    <img src="img2/q2.jpg">
+    <img src="img2/q3.jpg">
+    <img src="img2/q4.jpg">
+</div>
+
+<script>
+    var plaatjes = document.getElementsByTagName("img");
+    var randomNumbers = [];
+
+    var random = 0;
+
+    while (randomNumbers.length < 9) {
+        random = Math.floor(Math.random() * 9) + 1;
+        if (randomNumbers.lastIndexOf(random) == -1) {
+            randomNumbers.push(random);
+
+        }
+    }
+        random = 0;
+    for (var plaatje in plaatjes) {
+        plaatjes[plaatje].src = "img2/q" + randomNumbers[random] + ".jpg"
+        random++;
+    }
+
+ /*
+    var random = 0;
+    for (var i = 0; i < plaatjes.length; i++) {
+        random = Math.floor(Math.random() * 9) + 1;
+        plaatjes[i].src = "img2/q" + random + ".jpg";
+    }
+
+*/
+</script>
+
+</body>
+</html>
